@@ -84,9 +84,6 @@ function Sidebar({ isOpen, setIsOpen }) {
         }
       `}
     >
-      {/* ==================== */}
-      {/* Hamburger */}
-      {/* ==================== */}
 
       <div className="relative h-16 shrink-0">
         <button
@@ -114,10 +111,6 @@ function Sidebar({ isOpen, setIsOpen }) {
         </button>
       </div>
 
-      {/* ==================== */}
-      {/* Logo + User */}
-      {/* ==================== */}
-
       <div className="flex shrink-0 flex-col items-center justify-center px-4">
         <button
           type="button"
@@ -133,12 +126,12 @@ function Sidebar({ isOpen, setIsOpen }) {
               bg-white
               transition-all
               duration-300
-              group-hover:scale-110
+              group-hover:scale-105
 
               ${
                 isOpen
-                  ? "h-20 w-20"
-                  : "h-12 w-12"
+                  ? "h-12 w-12"
+                  : "h-6 w-6"
               }
             `}
           >
@@ -149,8 +142,8 @@ function Sidebar({ isOpen, setIsOpen }) {
                 transition-all
                 ${
                   isOpen
-                    ? "text-4xl"
-                    : "text-2xl"
+                    ? "text-2xl"
+                    : "text-base"
                 }
               `}
             >
@@ -159,10 +152,9 @@ function Sidebar({ isOpen, setIsOpen }) {
           </div>
         </button>
 
-        {/* Welcome */}
         <p
           className={`
-            mt-4
+            mt-3
             pb-2
             text-center
             font-bold
@@ -172,20 +164,16 @@ function Sidebar({ isOpen, setIsOpen }) {
 
             ${
               isOpen
-                ? "w-full border-b border-gray-500 opacity-100"
+                ? "w-full border-b border-gray-500/40 opacity-100"
                 : "pointer-events-none h-0 w-0 translate-x-20 overflow-hidden opacity-0"
             }
           `}
         >
-          <span className="text-[14px]">
+          <span className="text-[13px]">
             جناب آقای God Mode خوش آمدید.
           </span>
         </p>
       </div>
-
-      {/* ==================== */}
-      {/* Menu */}
-      {/* ==================== */}
 
       <div className="min-h-0 flex-1 overflow-y-auto">
         <nav className="flex w-full flex-col items-center gap-1">

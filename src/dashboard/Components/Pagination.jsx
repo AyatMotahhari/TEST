@@ -1,50 +1,45 @@
-import {
-  ChevronRight,
-  ChevronLeft,
-} from "lucide-react";
+import React from "react";
+import { ChevronRight, ChevronLeft } from "lucide-react";
 
-function Pagination() {
+export default function Pagination({ currentPage = 1, totalPages = 1, onPageChange }) {
+  if (totalPages <= 1) return null;
+
   return (
-    <div className="mt-5 flex items-center justify-between">
-      <p className="text-[11px] text-gray-600">
-        نمایش ۱ تا ۶ از ۶۴ گزارش
-      </p>
-
-      <div className="flex items-center gap-1">
+    <div className="w-full border-t border-white/5 py-3 flex items-center justify-center select-none">
+      <div className="flex items-center justify-center gap-1.5 text-xs">
         <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.07] text-gray-600 transition hover:bg-white/[0.05] hover:text-white"
+          onClick={() => onPageChange(Math.max(currentPage - 1, 1))}
+          disabled={currentPage === 1}
+          className="w-7 h-7 rounded-lg bg-orange-600 text-white flex items-center justify-center hover:bg-orange-500 disabled:opacity-30 disabled:hover:bg-orange-600 transition"
         >
-          <ChevronRight size={15} />
+          <ChevronRight className="w-4 h-4" />
         </button>
 
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center rounded-lg bg-orange-500 text-xs font-bold text-white"
-        >
-          ۱
-        </button>
+        {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
+          const isActive = currentPage === page;
+          return (
+            <button
+              key={page}
+              onClick={() => onPageChange(page)}
+              className={`w-7 h-7 rounded-lg font-bold flex items-center justify-center transition ${
+                isActive
+                  ? "bg-orange-600 text-white shadow-md shadow-orange-600/30"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {page}
+            </button>
+          );
+        })}
 
         <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.07] text-xs text-gray-500 transition hover:bg-white/[0.05] hover:text-white"
+          onClick={() => onPageChange(Math.min(currentPage + 1, totalPages))}
+          disabled={currentPage === totalPages}
+          className="w-7 h-7 rounded-lg bg-orange-600 text-white flex items-center justify-center hover:bg-orange-500 disabled:opacity-30 disabled:hover:bg-orange-600 transition"
         >
-          ۲
-        </button>
-
-        <span className="px-1 text-xs text-gray-700">
-          ...
-        </span>
-
-        <button
-          type="button"
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/[0.07] text-gray-600 transition hover:bg-white/[0.05] hover:text-white"
-        >
-          <ChevronLeft size={15} />
+          <ChevronLeft className="w-4 h-4" />
         </button>
       </div>
     </div>
   );
 }
-
-export default Pagination;
