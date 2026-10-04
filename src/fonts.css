@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'IRANSans';
+  src: url('/fonts/AIranianSans.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Samim';
+  src: url('/fonts/Samim-FD.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VazirLight';
+  src: url('/fonts/Vazir-Light-FD-WOL.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SamimBold';
+  src: url('/fonts/Samim-Bold-FD.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AvenirLTProMedium';
+  src: url('/fonts/AvenirLTProMedium.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AvenirLTProLight';
+  src: url('/fonts/AvenirLTProLight.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvenirLTProHeavy';
+  src: url('/fonts/AvenirLTProHeavy.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvenirLTProBook';
+  src: url('/fonts/AvenirLTProBook.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'AvenirLTProBlack';
+  src: url('/fonts/AvenirLTProBlack.woff2') format('woff2');
+  font-display: swap;
+}
+
+body {
+  font-family:
+    'Samim', 'IRANSans', 'BYekan', 'VazirLight', 'Tahoma', 'Arial', sans-serif;
+}
+
+button {
+  font-family: 'SamimBold', 'Samim', 'Arial', sans-serif;
+}
