@@ -9,7 +9,7 @@ function DashboardLayout({ children }) {
   return (
     <div
       dir="rtl"
-      className="min-h-screen bg-[#050505] text-white"
+      className="min-h-screen text-white gap-2"
     >
       <Sidebar
         isOpen={isSidebarOpen}
@@ -20,6 +20,7 @@ function DashboardLayout({ children }) {
         className={`
           min-h-screen
           transition-all
+          bg-black/80
           duration-500
           ${
             isSidebarOpen

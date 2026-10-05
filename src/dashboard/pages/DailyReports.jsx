@@ -1,21 +1,31 @@
-import { DocumentPlusIcon } from "@heroicons/react/24/solid";
+import { HiDocumentPlus } from "react-icons/hi2";
 import StatsCards from "../Components/StatsCards";
 import ReportFilters from "../Components/ReportFilters";
 import ReportsTable from "../Components/ReportsTable";
 import Pagination from "../Components/Pagination";
+import AddReport from "../Components/AddReport";
+import { useState } from "react";
 
 function DailyReports() {
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
-    <div>
+    <div className="-mt-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <button
           type="button"
-          className="flex h-10 w-40 items-center justify-center gap-2 rounded-xl bg-white/[0.1] px-5 text-sm font-bold text-white transition hover:bg-gray-600"
+          onClick={() => 
+            setIsModalOpen(true)}
+            
+          className="group flex h-10 w-40 items-center justify-center gap-2 rounded-xl px-5 text-sm font-bold text-white"
         >
           افزودن گزارش
-          <DocumentPlusIcon className="h-6 w-6 text-orange-500" />
+          <HiDocumentPlus className="h-6 w-6 text-orange-500 transition-transform duration-700 hover:rotate-360" />
         </button>
       </div>
+
+      <AddReport isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
 
       <div className="mt-6">
         <StatsCards />

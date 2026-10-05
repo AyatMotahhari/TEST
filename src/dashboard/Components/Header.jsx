@@ -5,12 +5,12 @@ import {
 
 function Header() {
   return (
-    <header className="border-b border-white/[0.07] bg-[#080809]/90 px-6 py-5">
+    <header className="border-b border-white/[0.07] px-6 py-5">
       <div className="flex items-center justify-between gap-6">
         {/* Title */}
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-500 shadow-lg shadow-orange-500/20">
-            <ClipboardList size={24} className="text-white" />
+          <div className="flex size-10 items-center justify-center rounded-xl bg-orange-500 shadow-lg shadow-orange-500/20">
+            <ClipboardList className="text-white w-5.5 h-5.5" />
           </div>
 
           <div>

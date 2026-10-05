@@ -67,32 +67,33 @@ const menuItems = [
 function Sidebar({ isOpen, setIsOpen }) {
 
   return (
-    <aside
+    <div
       className={`
         fixed right-0 top-0 z-50
         flex h-screen flex-col
         overflow-hidden
+        bg-black/80
         rounded-[15px]
-        bg-black/70
         transition-all duration-500
-        backdrop-blur-[2px]
-
         ${
           isOpen
-            ? "w-[15%] min-w-[180px] max-w-[280px]"
-            : "w-[4.5%] min-w-[65px]"
+            ? "w-[15%] min-w-45 max-w-70"
+            : "w-17.5"
         }
       `}
     >
 
-      <div className="relative h-16 shrink-0">
+      <div className={`
+        flex
+        h-16
+        shrink-0
+        items-center
+        ${isOpen ? "justify-end" : "justify-center"}
+      `}>
         <button
           type="button"
           onClick={() => setIsOpen((prev) => !prev)}
           className="
-            absolute
-            left-5
-            top-3
             flex
             cursor-pointer
             items-center
@@ -111,7 +112,16 @@ function Sidebar({ isOpen, setIsOpen }) {
         </button>
       </div>
 
-      <div className="flex shrink-0 flex-col items-center justify-center px-4">
+      <div
+        className="
+          flex
+          shrink-0
+          flex-col
+          items-center
+          justify-center
+          px-2
+        "
+      >
         <button
           type="button"
           className="group"
@@ -130,8 +140,8 @@ function Sidebar({ isOpen, setIsOpen }) {
 
               ${
                 isOpen
-                  ? "h-12 w-12"
-                  : "h-6 w-6"
+                  ? "h-15 w-15"
+                  : "h-12 w-12"
               }
             `}
           >
@@ -184,15 +194,13 @@ function Sidebar({ isOpen, setIsOpen }) {
               <button
                 key={item.title}
                 type="button"
-                className="
+                className={`
                   group
                   flex
-                  h-[58px]
+                  h-14.5
                   w-[90%]
                   items-center
-                  justify-start
                   rounded-xl
-                  px-4
                   text-white/60
                   transition-all
                   duration-200
@@ -200,7 +208,13 @@ function Sidebar({ isOpen, setIsOpen }) {
                   hover:text-white
                   hover:border-r-2
                   hover:border-r-white
-                "
+
+                  ${
+                    isOpen
+                      ? "justify-start px-4"
+                      : "justify-center px-0"
+                  }
+                `}
               >
                 <Icon
                   size={26}
@@ -218,7 +232,7 @@ function Sidebar({ isOpen, setIsOpen }) {
           })}
         </nav>
       </div>
-    </aside>
+    </div>
   );
 }
 

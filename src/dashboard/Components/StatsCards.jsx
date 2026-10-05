@@ -1,28 +1,37 @@
+import { PiWarningCircleFill } from "react-icons/pi";
+import { ImCheckmark } from "react-icons/im";
+
 const stats = [
   {
     title: "کل گزارشات",
-    value: "128",
+    value: "64",
     icon: "#",
     color: "orange",
   },
   {
-    title: "تکمیل شده",
-    value: "96",
-    icon: "✓",
+    title: "گزارش های تایید شده",
+    value: "64",
+    icon: <ImCheckmark />,
     color: "green",
   },
   {
-    title: "در انتظار بررسی",
-    value: "32",
-    icon: "!",
+    title: "گزارش های بدون امضا",
+    value: "0",
+    icon: <PiWarningCircleFill />,
     color: "white",
   },
+  {
+    title: "گزارش های تایید نشده",
+    value: "0",
+    icon: <PiWarningCircleFill />,
+    color: "green",
+  }
 ];
 
 function StatsCards() {
   return (
-    <div className="flex justify-center">
-      <div className="grid grid-cols-3 gap-70">
+    <div className="flex justify-center -mt-4">
+      <div className="grid grid-cols-4 gap-20">
         {stats.map((item) => {
           const colors = {
             orange: {
@@ -57,9 +66,11 @@ function StatsCards() {
               >
                 {item.icon}
               </div>
+
               <div
                 className={`mx-5 h-14 w-px shrink-0 ${color.line}`}
               />
+
               <div className="shrink-0">
                 <p className="text-xl font-bold text-white">
                   {item.value}
