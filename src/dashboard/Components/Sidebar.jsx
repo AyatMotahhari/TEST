@@ -72,13 +72,13 @@ function Sidebar({ isOpen, setIsOpen }) {
         fixed right-0 top-0 z-50
         flex h-screen flex-col
         overflow-hidden
-        bg-black/80
+        bg-black/90
         rounded-[15px]
         transition-all duration-500
         ${
           isOpen
-            ? "w-[15%] min-w-45 max-w-70"
-            : "w-17.5"
+            ? "w-[15%] min-w-45 max-w-71"
+            : "w-18.5"
         }
       `}
     >
@@ -99,6 +99,7 @@ function Sidebar({ isOpen, setIsOpen }) {
             items-center
             justify-center
             text-white
+            px-2
             transition-all
             duration-300
             hover:scale-110

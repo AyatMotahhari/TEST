@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Search, FileText } from 'lucide-react';
 
-export default function FilterBar({ 
-  searchQuery, 
-  setSearchQuery, 
+export default function FilterBar({  
   activeFilter: controlledActiveFilter, 
   setActiveFilter: controlledSetActiveFilter 
 }) {
   const [internalActiveFilter, setInternalActiveFilter] = useState('all');
+  const [searchQuery, setSearchQuery] = useState("")
+
+  console.log(searchQuery)
 
   const activeFilter = controlledActiveFilter ?? internalActiveFilter;
+  
   const setActiveFilter = controlledSetActiveFilter ?? setInternalActiveFilter;
 
   const filterTabs = [
@@ -19,9 +21,9 @@ export default function FilterBar({
   ];
 
   return (
-    <div className="p-5 border-b border-white/5 flex flex-wrap items-center justify-between gap-5">
+    <div className="p-5 -mt-2.5 border-b border-white/5 flex flex-wrap items-center justify-between gap-5">
       
-      <div className="flex items-center gap-3 text-white font-bold text-base">
+      <div className="flex items-center gap-3 text-white font-bold text-xl">
         <div className="w-9 h-9 rounded-xl bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-orange-400">
           <FileText className="w-5 h-5" />
         </div>

@@ -32,7 +32,7 @@ function StatsCards() {
   return (
     <div className="flex justify-center -mt-4">
       <div className="grid grid-cols-4 gap-20">
-        {stats.map((item) => {
+        {stats?.map((item) => {
           const colors = {
             orange: {
               border: "border-orange-500/30",
@@ -72,7 +72,7 @@ function StatsCards() {
               />
 
               <div className="shrink-0">
-                <p className="text-xl font-bold text-white">
+                <p className="text-xl font-bold font-[AvenirLTProBook] text-white">
                   {item.value}
                 </p>
 

@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./Components/Sidebar";
 import Header from "./Components/Header";
+import bgImage from "../assets/Dark.jpg";
 
 function DashboardLayout({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -9,8 +10,17 @@ function DashboardLayout({ children }) {
   return (
     <div
       dir="rtl"
-      className="min-h-screen text-white gap-2"
+      className="relative h-screen w-full overflow-hidden text-white"
     >
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+        }}
+      />
+
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-black/40" />
+
       <Sidebar
         isOpen={isSidebarOpen}
         setIsOpen={setIsSidebarOpen}
@@ -18,21 +28,38 @@ function DashboardLayout({ children }) {
 
       <main
         className={`
-          min-h-screen
+          h-screen
+          overflow-hidden
           transition-all
-          bg-black/80
           duration-500
           ${
             isSidebarOpen
-              ? "pr-[15%]"
-              : "pr-[4.5%]"
+              ? "mr-[15%]"
+              : "mr-[4%]"
           }
         `}
       >
-        <Header />
+        <div
+          className="
+            h-full
+            w-full
+            overflow-hidden
+            rounded-[15px]
+            bg-black/90
+          "
+        >
+          <Header />
 
-        <div className="px-6 py-6">
-          {children}
+          <div
+            className="
+              h-[calc(100vh-64px)]
+              overflow-y-auto
+              px-2
+              py-3
+            "
+          >
+            {children}
+          </div>
         </div>
       </main>
     </div>

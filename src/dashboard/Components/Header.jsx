@@ -5,7 +5,7 @@ import {
 
 function Header() {
   return (
-    <header className="border-b border-white/[0.07] px-6 py-5">
+    <header className="border-b border-white/[0.07] px-3 py-3">
       <div className="flex items-center justify-between gap-6">
         {/* Title */}
         <div className="flex items-center gap-4">
@@ -29,17 +29,17 @@ function Header() {
               className="text-orange-500"
             />
             <span className="text-xs font-medium text-gray-200">تاریخ ویرایش:</span>
-            <span className="text-xs font-medium text-gray-200">1402/04/20</span>
+            <span className="text-xs font-medium font-[AvenirLTProBook] text-gray-200">1402/04/20</span>
           </div>
 
           <div className="flex items-center gap-1">
             <span className="text-xs font-medium text-gray-200">شماره ویرایش:</span>
-            <span className="text-xs font-medium text-gray-200">00</span>
+            <span className="text-xs font-medium font-[AvenirLTProBook] text-gray-200">00</span>
           </div>
 
           <div className="flex items-center gap-1">
             <span className="text-xs font-medium text-gray-200">کد سند:</span>
-            <span className="text-xs font-medium text-gray-200">F0532</span>
+            <span className="text-xs font-medium font-[AvenirLTProBook] text-gray-200">F0532</span>
           </div>
 
         </div>

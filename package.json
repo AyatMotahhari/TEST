@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.20",
     "@heroicons/react": "^2.2.0",
     "lucide-react": "^1.52.0",
     "react": "^19.2.8",
